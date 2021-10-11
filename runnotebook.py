@@ -63,8 +63,7 @@ class FileOpBase(ABC):
 
     def get_file_from_object_storage(self,file:str)->None:
         """Utility to download the file"""
-        import pdb
-        pdb.set_trace()
+
         object_to_get = self.get_object_storage_filename(file)
         self.cos_client.fget_object(bucket_name=self.cos_bucket,
                                     object_name=object_to_get,
@@ -155,8 +154,7 @@ class NotebookFileOp(FileOpBase):
             import papermill
             import json
             config_params = None
-            import pdb;
-            pdb.set_trace()
+
             if self.input_params.get("parameters"):
                 config_params=json.loads(self.input_params.get("parameters"))
             papermill.execute_notebook(notebook,notebook_output,parameters=config_params)

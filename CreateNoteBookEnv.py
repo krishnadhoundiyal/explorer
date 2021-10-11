@@ -6,18 +6,16 @@ from typing import Optional
 # Inputs and Outputs separator character.  If updated,
 # same-named variable in bootstrapper.py must be updated!
 INOUT_SEPARATOR = ';'
-
-EXPLORER_GITHUB_ORG = os.getenv("EXPLORER_GITHUB_ORG", "krishnadhoundiyal")
-EXPLORER_GITHUB_BRANCH = os.getenv("EXPLORER_GITHUB_BRANCH", "config")
+EXPLORER_GITHUB_ORG = os.getenv("EXPLORER_GITHUB_ORG", "krishnadhoundiyal/explorer")
+EXPLORER_GITHUB_BRANCH = os.getenv("EXPLORER_GITHUB_BRANCH", "main")
 
 EXPLORER_BOOTSCRIPT_URL = os.getenv('EXPLORER_BOOTSTRAP_SCRIPT_URL',
-                                 'https://raw.githubusercontent.com/{org}/{branch}/airflow/CreateNoteBookEnv.py'.
+                                 'https://raw.githubusercontent.com/{org}/{branch}/CreateNoteBookEnv.py'.
                                  format(org=EXPLORER_GITHUB_ORG,
                                         branch=EXPLORER_GITHUB_BRANCH))
 
 EXPLORER_REQUIREMENTS_URL = os.getenv('EXPLORER_REQUIREMENTS_URL',
-                                   'https://raw.githubusercontent.com/{org}/'
-                                   'explorer/{branch}/airflow/requirements-explorer.txt'.
+                                   'https://raw.githubusercontent.com/{org}/{branch}/requirements-explorer.txt'.
                                    format(org=EXPLORER_GITHUB_ORG,
                                           branch=EXPLORER_GITHUB_BRANCH))
 

@@ -53,7 +53,7 @@ class FileOpBase(ABC):
         """Downloads all the dependent notebook/python books"""
         archive = self.input_params.get('dependencies-archive')
         self.get_file_from_object_storage(archive)
-        inputs = self.input_params.get('input')
+        inputs = self.input_params.get('inputs')
         if inputs:
             input_list = inputs.split(INOUT_SEPARATOR)
             for file in input_list:

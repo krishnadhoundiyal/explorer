@@ -1,4 +1,4 @@
-ak-minio==5.0.7.post2
+
 ansiwrap==0.8.4
 appdirs==1.4.4
 attrs==21.2.0

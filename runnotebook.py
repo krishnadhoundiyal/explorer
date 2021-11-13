@@ -183,7 +183,7 @@ class NotebookFileOp(FileOpBase):
 class PythonFileOp(FileOpBase):
     def execute(self)->None:
         python_script = os.path.basename(self.filepath)
-        file_type = python_script.split(".")[-1]
+        file_type = python_script.split(".")[1]
         type = "python"
         if file_type == "py":
             type = "python"

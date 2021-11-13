@@ -30,7 +30,7 @@ class FileOpBase(ABC):
         filepath = kwargs['filepath']
         if '.ipynb' in filepath:
             return NotebookFileOp(**kwargs)
-        elif '.py' in filepath:
+        elif '.py' in filepath or '.pl' in filepath :
             return PythonFileOp(**kwargs)
         else:
             raise ValueError('Unsupported file type: {}'.format(filepath))

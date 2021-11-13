@@ -184,13 +184,12 @@ class PythonFileOp(FileOpBase):
     def execute(self)->None:
         python_script = os.path.basename(self.filepath)
         file_type = python_script.split(".")[1]
-        print(file_type)
         type = "python"
         if file_type == "py":
             type = "python"
         elif file_type == "pl":
             type = "perl"
-        print(type)
+        
         #python_script_name = python_script.replace('.py','')
         python_script_log = python_script.split(".")[0] + ".log"
         try:

@@ -192,7 +192,7 @@ class PythonFileOp(FileOpBase):
         #python_script_name = python_script.replace('.py','')
         python_script_log = python_script.split(".")[0] + ".log"
         try:
-            Utility.log_operation_info(f"Exececuting python script '{python_script_name}'")
+            Utility.log_operation_info(f"Exececuting python script '{python_script}'")
             with open(python_script_log,"w") as log_file:
                 subprocess.run([type,python_script],stdout=log_file,stderr=subprocess.STDOUT,check=True)
             Utility.log_operation_info("Execution Completed")

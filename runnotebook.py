@@ -183,12 +183,18 @@ class NotebookFileOp(FileOpBase):
 class PythonFileOp(FileOpBase):
     def execute(self)->None:
         python_script = os.path.basename(self.filepath)
-        python_script_name = python_script.replace('.py','')
-        python_script_log = python_script_name + ".log"
+        file_type = python_script.split(".")[-1]
+        if file_type == ".py":
+            type = "python"
+        elif file_type == ".pl":
+            type = "perl"
+            
+        #python_script_name = python_script.replace('.py','')
+        python_script_log = python_script.split(".")[0] + ".log"
         try:
             Utility.log_operation_info(f"Exececuting python script '{python_script_name}'")
             with open(python_script_log,"w") as log_file:
-                subprocess.run(['python',python_script],stdout=log_file,stderr=subprocess.STDOUT,check=True)
+                subprocess.run([type,python_script],stdout=log_file,stderr=subprocess.STDOUT,check=True)
             Utility.log_operation_info("Execution Completed")
             self.put_file_to_object_storage(python_script_log)
             self.process_outputs()
